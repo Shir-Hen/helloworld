@@ -15,7 +15,15 @@ pipeline {
                 bat 'mvn clean package'
                 echo 'Shir is finishing Building her Project'
             }
-     
       }
+      stage ('Run') {
+            steps {
+                bat 'java -jar helloworld.jar'
+                echo 'Shir is finishing Running her Project'
+            }
+      }      
+        
+        
+        
     }
 }
