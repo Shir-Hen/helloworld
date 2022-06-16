@@ -13,7 +13,7 @@ pipeline {
         stage ('Build') {
             steps {
                 sh 'mvn -Dmaven.test.failure.ignore=true install'
-                echo 'Finished Building Shir's Project'
+                echo 'Shir is finishing Building her Project'
             }
         }
     }
