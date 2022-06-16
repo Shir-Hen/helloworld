@@ -18,7 +18,7 @@ pipeline {
       }
       stage ('Run') {
             steps {
-                bat 'java -jar helloworld.jar'
+                bat 'mvn test'
                 echo 'Shir is finishing Running her Project'
             }
       }      
