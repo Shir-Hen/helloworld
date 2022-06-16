@@ -9,12 +9,13 @@ pipeline {
                     echo "Init"
             }
         }
-
+    node ("windows") {
         stage ('Build') {
             steps {
                 sh 'mvn clean package'
                 echo 'Shir is finishing Building her Project'
             }
         }
+      }
     }
 }
