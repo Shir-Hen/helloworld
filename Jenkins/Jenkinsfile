@@ -17,7 +17,7 @@ pipeline {
       }
       stage ('Run') {
             steps {
-                bat 'java -cp target/multi-module-application-2.0.0 com.example.multimodule.application.DemoApplication'
+                bat 'java -cp target/multi-module-application-2.0.0 com.example.multimodule.application;'
                 echo 'Shir is finishing Running her Project'  
             }
       }      
