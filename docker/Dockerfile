@@ -1,5 +1,16 @@
-FROM openjdk:8-jdk-alpine
-VOLUME /tmp
-ADD helloworld-1.1.jar hello-docker-app.jar
-ENV JAVA_OPTS=""
-ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /hello-docker-app.jar" ] 
+ARG REGISTRY=yann-sbx.dev.gcp.devopsacc.team
+ARG DOCKER_REPO=urs-docker
+
+#FROM $REGISTRY/$DOCKER_REPO/groovy:jre16
+FROM java:8
+
+# https://docs.docker.com/engine/reference/builder/#understand-how-arg-and-from-interact
+# ARG REGISTRY
+
+# dummy 
+RUN mkdir -p /home/groovy/webapp/
+COPY multi-module-application-2.0.0.jar /home/groovy/webapp/multi-module-application-2.0.0.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "/home/groovy/webapp/multi-module-application-2.0.0.jar"]
