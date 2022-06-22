@@ -9,8 +9,8 @@ FROM java:8
 
 # dummy 
 RUN mkdir -p /home/groovy/webapp/
-COPY multi-module-application-2.0.0.jar /home/groovy/webapp/multi-module-application-2.0.0.jar
+COPY target/multi-module-application-2.0.0.jar /home/groovy/webapp/multi-module-application-2.0.0.jar
 
-EXPOSE 8080
+EXPOSE 8089
 
 ENTRYPOINT ["java", "-jar", "/home/groovy/webapp/multi-module-application-2.0.0.jar"]
