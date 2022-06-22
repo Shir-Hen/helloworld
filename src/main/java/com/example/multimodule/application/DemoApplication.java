@@ -27,6 +27,6 @@ public class DemoApplication {
 		/*Logger log = LogManager.getLogger();
 		log.info("start program");
 		SpringApplication.run(DemoApplication.class, args);*/
-		System.out.println("Shir is running her jar");
+		System.out.println("Shir is running the java project");
 	}
 }
