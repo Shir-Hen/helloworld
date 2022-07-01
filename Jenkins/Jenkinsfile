@@ -21,7 +21,7 @@ pipeline {
                 echo 'Shir is finishing copying the jar to jFrog'  
             }
       }  	  
-      stage ('Download the JAR from jFrog and run Docker Build') {
+      stage ('Docker Build') {
             steps {
 				bat 'docker build . -t shir-docker-app -f docker/Dockerfile'
                 echo 'Shir is finishing creating a docker image'  
