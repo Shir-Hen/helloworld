@@ -17,7 +17,7 @@ pipeline {
       }
       stage ('Save JAR to Artifactory') {
             steps {
-			    bat 'xcopy target/multi-module-application-2.0.0.jar'
+			    bat 'xcopy target/multi-module-application-2.0.0.jar '
 				bat 'C:/tools/Jfrog/jf.exe rt u multi-module-application-2.0.0.jar shir-training'
                 echo 'Shir is finishing copying the jar to jFrog'  
             }
