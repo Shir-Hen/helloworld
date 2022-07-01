@@ -9,24 +9,29 @@ pipeline {
                     echo "Init"
             }
         }
-        stage ('Build') {
+        stage ('Maven Build') {
             steps {
                 bat 'mvn clean package'
                 echo 'Shir finished Building her Project'
             }
       }
+      stage ('Save JAR to Artifactory') {
+            steps {
+				bat 'jf rt cp "target/multi-module-application-2.0.0.jar" shir-training/'
+                echo 'Shir is finishing copying the jar to jFrog'  
+            }
+      }  	  
       stage ('Docker Build') {
             steps {
-               // bat 'java -1 jar target/multi-module-application-2.0.0.jar'//
-				  bat 'docker build . -t shir-docker-app -f docker/Dockerfile'
-                echo 'Shir is finishing creating docker image'  
+				bat 'docker build . -t shir-docker-app -f docker/Dockerfile'
+                echo 'Shir is finishing creating a docker image'  
             }
       }      
-      
+ 
       stage ('Docker Run') {
             steps {
 				  bat 'docker run shir-docker-app' 
-				  echo 'Shir is finishing running docker container' 				  
+				  echo 'Shir is finishing running the docker container' 				  
             }
       }      
 
