@@ -9,8 +9,8 @@ FROM java:8
 
 # dummy 
 RUN mkdir -p /home/groovy/webapp/
-#RUN C:/tools/Jfrog/jf.exe rt download shir-training/multi-module-application-2.0.0.jar /home/groovy/webapp/
-COPY target/multi-module-application-2.0.0.jar /home/groovy/webapp/multi-module-application-2.0.0.jar
+RUN C:/tools/Jfrog/jf.exe rt download shir-training/target/multi-module-application-2.0.0.jar /home/groovy/webapp/
+#COPY target/multi-module-application-2.0.0.jar /home/groovy/webapp/multi-module-application-2.0.0.jar
 
 EXPOSE 8089
 
