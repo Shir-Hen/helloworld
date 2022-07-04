@@ -18,7 +18,7 @@ pipeline {
       stage ('Save JAR to Artifactory') {
             steps {
 			
-				bat 'jf rt u --url=http://34.159.12.117:8082/artifactory target/multi-module-application-2.0.0.jar shir-repo'
+				bat 'jf rt u --url=http://34.159.12.117:8082 target/multi-module-application-2.0.0.jar shir-repo'
                 echo 'Shir is finishing copying the jar to jFrog'  
             }
       }  	  
